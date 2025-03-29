@@ -15,3 +15,19 @@ export async function buscarSuperheroesPorAtributo(atributo, valor) {
 export async function obtenerSuperheroesMayoresDe30() {
     return await superHeroRepository.obtenerMayoresDe30();
 }
+
+export async function crearSuperheroe(superheroe) {
+    return await superHeroRepository.crearSuperheroe(superheroe);
+}
+
+export async function actualizarSuperheroe(id,datosActualizados) {
+    return await superHeroRepository.actualizarSuperheroe(id,datosActualizados);
+}
+
+export async function borrarPorIdSuperheroe(id) {
+    return await superHeroRepository.borrarPorIdSuperheroe(id);
+}
+
+export async function borrarPorNombreSuperheroe(nombre) {
+    return await superHeroRepository.borrarPorNombreSuperheroe(nombre);
+}

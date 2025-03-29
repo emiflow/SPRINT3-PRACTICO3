@@ -14,6 +14,20 @@ class IRepository {
     obtenerMayoresDe30() {
         throw new Error("Método 'obtenerMayoresDe30()' no implementado");
     }
+    crearSuperheroe(superheroe){
+        throw new Error("Método 'crearSuperheroe()' no implementado");
+    }
+    actualizarSuperheroe(id,datosActualizados){
+        throw new Error("Método 'actualizarSuperheroe()' no implementado");
+    }
+    borrarPorIdSuperheroe(id){
+        throw new Error("Método 'borrarPorIdSuperheroe()' no implementado");
+    }
+    borrarPorNombreSuperheroe(nombre){
+        throw new Error("Método 'borrarPorNombreSuperheroe()' no implementado");
+    }
+    
+    
 }
 
 export default IRepository;
