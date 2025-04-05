@@ -58,7 +58,6 @@ class SuperHeroRepository extends IRepository {
     }
 
     async borrarPorIdSuperheroe(id) {
-    
             const superheroe = await superHero.findOneAndDelete(
                 { _id: id }, 
                 { new: true }
@@ -67,13 +66,16 @@ class SuperHeroRepository extends IRepository {
               return superheroe;   
 }
 async borrarPorNombreSuperheroe(nombre) {
-    
     const superheroe = await superHero.findOneAndDelete(
         { nombreSuperHeroe: nombre }, 
         { new: true }
       )
 
       return superheroe;   
+}
+async borrarTodo() {
+    const superheroe = await superHero.deleteMany({});
+      return superheroe.deletedCount;   
 }
 
 }

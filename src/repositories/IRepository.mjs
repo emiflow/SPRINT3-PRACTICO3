@@ -26,6 +26,9 @@ class IRepository {
     borrarPorNombreSuperheroe(nombre){
         throw new Error("Método 'borrarPorNombreSuperheroe()' no implementado");
     }
+    borrarTodo(){
+        throw new Error("Método 'borrarTodo()' no implementado");
+    }
     
     
 }

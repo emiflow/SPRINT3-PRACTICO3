@@ -1,4 +1,5 @@
 import { body } from "express-validator";
+
 export const reglasDeValidacion = () => [
     body('nombreSuperHeroe').notEmpty().withMessage('El nombre del Superheroe es OBLIGATORIO').bail()
     .isLength({min:3,max:60}).withMessage('Ingrese un nombre de Superheroe que tenga 3 o mas y 60 o menos caracteres')
@@ -13,9 +14,13 @@ export const reglasDeValidacion = () => [
     .trim(),
 
     body('poderes').notEmpty().withMessage('Los poderes del Superheroe son OBLIGATORIOS').bail()
+    .customSanitizer(value => value.split(","))
     .isArray({min:1}).withMessage('Debe ingresar un array de Poderes con un poder como minimo').bail()
     .custom((poderes)=>{
         poderes.forEach(poder => {
+            if(poder === ''){
+                throw new Error("No se puede tener poderes vacios");
+            }
             if (typeof poder !== "string") {
                 throw new Error("Cada poder debe ser un texto");
               }
@@ -26,5 +31,13 @@ export const reglasDeValidacion = () => [
         return true;
     }),
     
-    body('poderes.*').trim()
+    body('poderes.*').trim(),
+
+    body('aliados').customSanitizer(value => value.split(",")).trim(),
+
+    body('enemigos').customSanitizer(value => value.split(",")).trim()
+    
+
 ];
+
+

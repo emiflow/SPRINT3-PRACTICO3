@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Superheroe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-3xl mx-auto bg-white p-6 shadow-lg rounded-lg">
+        <h1 class="text-2xl font-bold mb-4 text-center">Crear Superhéroe</h1>
+        <form action="http://localhost:3000/api/crearSuperheroe" method="post" class="space-y-4">
+            <fieldset class="border p-4 rounded-lg">
+                <legend class="font-semibold text-lg">Información General</legend>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label class="block">Nombre del Superhéroe:
+                        <input type="text" name="nombreSuperHeroe" required minlength="3" maxlength="60" 
+                            class="w-full p-2 border rounded-lg">
+                    </label>
+                    <label class="block">Nombre Real:
+                        <input type="text" name="nombreReal" required minlength="3" maxlength="60" 
+                            class="w-full p-2 border rounded-lg">
+                    </label>
+                    <label class="block">Edad:
+                        <input type="number" name="edad" required 
+                            class="w-full p-2 border rounded-lg">
+                    </label>
+                    <label class="block">Planeta de Origen:
+                        <input type="text" name="planetaOrigen" required 
+                            class="w-full p-2 border rounded-lg">
+                    </label>
+                    <label class="block">Debilidad:
+                        <input type="text" name="debilidad" required 
+                            class="w-full p-2 border rounded-lg">
+                    </label>
+                    <label class="block">Creador:
+                        <input type="text" name="creador" minlength="3" maxlength="60" 
+                            class="w-full p-2 border rounded-lg">
+                    </label>
+                </div>
+            </fieldset>
+        
+            <fieldset class="border p-4 rounded-lg">
+                <legend class="font-semibold text-lg">Poderes (Separados por coma)</legend>
+                <input type="text" name="poderes" required 
+                    class="w-full p-2 border rounded-lg">
+            </fieldset>
+        
+            <fieldset class="border p-4 rounded-lg">
+                <legend class="font-semibold text-lg">Aliados (Separados por coma)</legend>
+                <input type="text" name="aliados" required 
+                    class="w-full p-2 border rounded-lg">
+            </fieldset>
+        
+            <fieldset class="border p-4 rounded-lg">
+                <legend class="font-semibold text-lg">Enemigos (Separados por coma)</legend>
+                <input type="text" name="enemigos" required 
+                    class="w-full p-2 border rounded-lg">
+            </fieldset>
+        
+            <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition">
+                Crear Superhéroe
+            </button>
+        </form>
+    </div>
+</body>
+</html>
